@@ -6,3 +6,22 @@
 
 # 임시 파일 무시 
 *.tmp
+
+# Eclipse settings
+.metadata/
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Eclipse project files (optional)
+.settings/
+.project
+.classpath
+
+# Maven output
+/target/
+
+# OS-specific
+.DS_Store
+Thumbs.db
