@@ -1,0 +1,24 @@
+// components/CKEditorComponent.jsx
+import React from 'react'
+import { CKEditor } from '@ckeditor/ckeditor5-react'
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+
+const CKEditorComponent = ({ value, onChange }) => {
+  return (
+    <div className="ckeditor-container">
+      <CKEditor
+        editor={ClassicEditor}
+        data={value}
+        onChange={(event, editor) => {
+          const data = editor.getData()
+          onChange(data)
+        }}
+        config={{
+          placeholder: "내용을 입력하세요...",
+        }}
+      />
+    </div>
+  )
+}
+
+export default CKEditorComponent
