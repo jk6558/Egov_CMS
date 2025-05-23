@@ -9,7 +9,7 @@ const AdminComponentEditor = () => {
 
   const fetchData = () => {
     axios
-      .get("http://localhost:8080/api/components")
+      .get("http://218.234.33.15:8085/api/components")
       .then((res) => {
         console.log("🚀 컴포넌트 목록:", res.data);
         setComponents(res.data);
@@ -26,7 +26,7 @@ const AdminComponentEditor = () => {
   const handleDelete = async (id) => {
     if (window.confirm("정말 삭제하시겠습니까?")) {
       try {
-        await axios.delete(`http://localhost:8080/api/components/${id}`);
+        await axios.delete(`http://218.234.33.15:8085/api/components/${id}`);
         fetchData(); // 삭제 후 목록 갱신
         setSelected(null); // 선택 해제
       } catch (err) {

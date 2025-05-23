@@ -7,7 +7,7 @@ const GuideList = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/components");
+      const res = await axios.get("http://218.234.33.15:8085/api/components");
       setGuides(res.data);
     } catch (err) {
       console.error("데이터 불러오기 실패", err);
@@ -17,7 +17,7 @@ const GuideList = () => {
   const handleDelete = async (id) => {
     if (window.confirm("정말 삭제하시겠습니까?")) {
       try {
-        await axios.delete(`http://localhost:8080/api/components/${id}`);
+        await axios.delete(`http://218.234.33.15:8085/api/components/${id}`);
         fetchData();
       } catch (err) {
         console.error("삭제 실패", err);
@@ -42,7 +42,7 @@ const GuideList = () => {
                 </Link>
                 <div>{g.description}</div>
                 <img
-                  src={`http://localhost:8080/api/components/${g.id}/image`}
+                  src={`http://218.234.33.15:8085/api/components/${g.id}/image`}
                   alt="guide"
                   width="150"
                   className="mt-2"

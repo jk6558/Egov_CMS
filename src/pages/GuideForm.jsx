@@ -83,7 +83,7 @@ const GuideForm = () => {
     fd.append("image", image);
 
     try {
-      await axios.post("http://localhost:8080/api/components", fd);
+      await axios.post("http://218.234.33.15:8085/api/components", fd);
       alert("등록 성공!");
       navigate("/");
     } catch (err) {
