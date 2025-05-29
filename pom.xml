@@ -744,6 +744,7 @@
                 <version>3.5.0</version>
             </plugin>
         </plugins>
+<<<<<<< HEAD
         <resources>
         	<resource>
 	            <directory>src/main/resources</directory>
@@ -753,6 +754,8 @@
 	            </includes>
 	        </resource>
 	    </resources>
+=======
+>>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
     </build>
 
     <reporting>

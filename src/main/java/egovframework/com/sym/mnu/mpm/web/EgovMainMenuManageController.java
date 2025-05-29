@@ -216,7 +216,11 @@ public class EgovMainMenuManageController {
      * @return 출력페이지정보 "EgovMainView"
      * @exception Exception
      */
+<<<<<<< HEAD
     //@IncludedInfo(name="포털(예제) 메인화면", order = 1, gid = 0)
+=======
+    @IncludedInfo(name="포털(예제) 메인화면", order = 1, gid = 0)
+>>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
     @RequestMapping(value="/sym/mnu/mpm/EgovMainMenuHome.do")
     public String selectMainMenuHome(
     		@ModelAttribute("menuManageVO") MenuManageVO menuManageVO,

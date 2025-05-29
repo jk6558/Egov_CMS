@@ -12,7 +12,11 @@ import egovframework.com.sym.mnu.stm.service.SiteMapngVO;
 /**
  * 사이트맵 조회를 처리하는 비즈니스 구현 클래스를 정의한다.
  * @author 개발환경 개발팀 이용
+<<<<<<< HEAD
  * @since 2009.06.01a
+=======
+ * @since 2009.06.01
+>>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
  * @version 1.0
  * @see
  *

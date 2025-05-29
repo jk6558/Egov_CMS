@@ -119,7 +119,11 @@
 				, RELATE_IMAGE_NM   AS RELATE_IMAGE_NM
 				, PROGRM_FILE_NM    AS PROGRM_FILE_NM
 			FROM COMTNMENUINFO 
+<<<<<<< HEAD
 			WHERE Menu_NO > 0 			
+=======
+			WHERE Menu_NO > 0 
+>>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
 			ORDER BY MENU_ORDR
 		 
 	</select>

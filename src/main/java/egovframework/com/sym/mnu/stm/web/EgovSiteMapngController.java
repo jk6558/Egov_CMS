@@ -42,7 +42,11 @@ import egovframework.com.sym.mnu.stm.service.EgovSiteMapngService;
  */
 
 @Controller
+<<<<<<< HEAD
 public class EgovSiteMapngController {	
+=======
+public class EgovSiteMapngController {
+>>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(EgovSiteMapngController.class);
 
@@ -78,7 +82,11 @@ public class EgovSiteMapngController {
     	LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
     	searchVO.setSearchKeyword(user.getId());
     	// AuthorCode 검색
+<<<<<<< HEAD
     	MenuCreatVO menuVO = menuCreateManageService.selectAuthorByUsr(searchVO);
+=======
+		MenuCreatVO menuVO = menuCreateManageService.selectAuthorByUsr(searchVO);
+>>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
 
     	MenuSiteMapVO menuSiteMapVO = new MenuSiteMapVO();
     	menuSiteMapVO.setAuthorCode(menuVO.getAuthorCode());

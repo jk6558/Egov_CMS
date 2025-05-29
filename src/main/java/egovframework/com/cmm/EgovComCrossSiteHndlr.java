@@ -37,16 +37,28 @@ public class EgovComCrossSiteHndlr extends BodyTagSupport {
 	// *********************************************************************
 	// Internal state
 
+<<<<<<< HEAD
 	protected Object value; // tag attribute
 	protected String def; // tag attribute
 	protected boolean escapeXml; // tag attribute
 	private boolean needBody; // non-space body needed?
+=======
+	protected Object value; // tag attribute 출력할 원본 값
+	protected String def; // tag attribute 기본 값, value가 null일 경우 사용
+	protected boolean escapeXml; // tag attribute XML 이스케이프 처리 여부
+	private boolean needBody; // non-space body needed? 
+>>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
 
 	// *********************************************************************
 	// Construction and initialization
 
+<<<<<<< HEAD
 	private final String m_sDiffChar ="()[]{}\"',:;= \t\r\n%!+-";
 	private final String m_sArrDiffChar [] = {
+=======
+	private final String m_sDiffChar ="()[]{}\"',:;= \t\r\n%!+-"; //XSS 위험문자의 목록
+	private final String m_sArrDiffChar [] = { //위의 위험 문자에 대한 HTML 이스케이프 변환 결과
+>>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
 						"&#40;","&#41;",
 						"&#91;","&#93;",
 						"&#123;","&#125;",
@@ -61,7 +73,11 @@ public class EgovComCrossSiteHndlr extends BodyTagSupport {
 	
 	// 23.06.08 taglibs 라이브러리 취약점 패치 간 변경사항	김혜준
 	public static final int HIGHEST_SPECIAL = '>';
+<<<<<<< HEAD
     public static char[][] specialCharactersRepresentation = new char[HIGHEST_SPECIAL + 1][];
+=======
+    public static char[][] specialCharactersRepresentation = new char[HIGHEST_SPECIAL + 1][]; //일반적인 HTML 특수 문자(&, <, >, ', ")에 대한 이스케이프 매핑.
+>>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
     static {
         specialCharactersRepresentation['&'] = "&amp;".toCharArray();
         specialCharactersRepresentation['<'] = "&lt;".toCharArray();
@@ -97,7 +113,11 @@ public class EgovComCrossSiteHndlr extends BodyTagSupport {
 	// Tag logic
 
 	// evaluates 'value' and determines if the body should be evaluted
+<<<<<<< HEAD
 	public int doStartTag() throws JspException {
+=======
+	public int doStartTag() throws JspException { //태그 시작 처리
+>>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
 		needBody = false; // reset state related to 'default'
 		this.bodyContent = null; // clean-up body (just in case container is pooling tag handlers)
 		JspWriter out = pageContext.getOut();
@@ -124,7 +144,11 @@ public class EgovComCrossSiteHndlr extends BodyTagSupport {
 	}
 
 	// prints the body if necessary; reports errors
+<<<<<<< HEAD
 	public int doEndTag() throws JspException {
+=======
+	public int doEndTag() throws JspException {  //태그 종료 처리
+>>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
 		try {
 			if (!needBody){
 				return EVAL_PAGE; // nothing more to do

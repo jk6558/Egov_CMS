@@ -325,7 +325,11 @@ public class EgovCcmZipManageController {
 	 * @return "egovframework/com/sym/ccm/zip/EgovCcmZipList"
 	 * @throws Exception
 	 */
+<<<<<<< HEAD
 	//@IncludedInfo(name = "우편번호관리", listUrl = "/sym/ccm/zip/EgovCcmZipList.do", order = 1000, gid = 50)
+=======
+	@IncludedInfo(name = "우편번호관리", listUrl = "/sym/ccm/zip/EgovCcmZipList.do", order = 1000, gid = 50)
+>>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
 	@RequestMapping(value = "/sym/ccm/zip/EgovCcmZipList.do")
 	public String selectZipList(@ModelAttribute("loginVO") LoginVO loginVO, @ModelAttribute("searchVO") ZipVO searchVO,
 		ModelMap model) throws Exception {
