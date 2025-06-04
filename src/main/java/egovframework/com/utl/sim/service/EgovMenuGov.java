@@ -22,10 +22,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.List;
 import java.util.Vector;
-<<<<<<< HEAD
 import java.io.IOException;
-=======
->>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
 
 import egovframework.com.cmm.util.EgovResourceCloseHelper;
 
@@ -93,7 +90,6 @@ public class EgovMenuGov {
 		}
 		return success;
 	}
-<<<<<<< HEAD
 	
 	/**
      * 메뉴 파일 생성
@@ -112,7 +108,5 @@ public class EgovMenuGov {
             return false;
         }
     }
-=======
->>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
 
 }

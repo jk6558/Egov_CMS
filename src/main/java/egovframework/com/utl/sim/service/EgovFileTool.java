@@ -25,10 +25,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-<<<<<<< HEAD
 import java.io.*;
-=======
->>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
@@ -312,7 +309,6 @@ public class EgovFileTool {
 
 		return parResult;
 	}
-<<<<<<< HEAD
 	
 	/**
      * 파일 이름에서 작성자명을 추정 (예: sample_userA_202405.txt → userA)
@@ -431,7 +427,5 @@ public class EgovFileTool {
         }
         return dir.delete();
     }
-=======
->>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
 
 }

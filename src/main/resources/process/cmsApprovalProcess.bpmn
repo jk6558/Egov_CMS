@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions 
+					xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" 
+					xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" 
+					xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" 
+					xmlns:di="http://www.omg.org/spec/DD/20100524/DI" 
+					xmlns:modeler="http://camunda.org/schema/modeler/1.0" 
+					xmlns:camunda="http://camunda.org/schema/1.0/bpmn"
+					id="Definitions_0sqbt93" 
+					targetNamespace="http://bpmn.io/schema/bpmn" 
+					exporter="Camunda Modeler" 
+					exporterVersion="5.35.0" 
+					modeler:executionPlatform="Camunda Platform" 
+					modeler:executionPlatformVersion="7.23.0" 
+					camunda:historyTimeToLive="180">
+  <bpmn:process id="cmsApproval" name="CMS 콘텐츠 승인 프로세스" isExecutable="true" camunda:historyTimeToLive="180">
+	  <bpmn:startEvent id="StartEvent" />
+	  <bpmn:userTask id="ReviewTask" name="검토자 승인">
+	    <bpmn:potentialOwner>
+	      <bpmn:resourceAssignmentExpression>
+	        <bpmn:formalExpression>reviewer</bpmn:formalExpression>
+	      </bpmn:resourceAssignmentExpression>
+	    </bpmn:potentialOwner>
+	  </bpmn:userTask>
+	  <bpmn:endEvent id="EndEvent" />
+	  <bpmn:sequenceFlow id="Flow_0s3xsh7" sourceRef="StartEvent" targetRef="ReviewTask" />
+	  <bpmn:sequenceFlow id="Flow_1f3wy1r" sourceRef="ReviewTask" targetRef="EndEvent" />
+	</bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="cmsApproval">
+    
+      <bpmndi:BPMNShape id="StartEvent_di" bpmnElement="StartEvent">
+        <dc:Bounds x="182" y="92" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      
+      <bpmndi:BPMNShape id="ReviewTask_di" bpmnElement="ReviewTask">
+        <dc:Bounds x="182" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      
+      <bpmndi:BPMNShape id="EndEvent_di" bpmnElement="EndEvent">
+        <dc:Bounds x="182" y="382" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      
+      <bpmndi:BPMNEdge id="Flow_15t1jcy_di" bpmnElement="Flow_0s3xsh7">
+        <di:waypoint x="200" y="128" />
+        <di:waypoint x="200" y="242" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1xejf3o_di" bpmnElement="Flow_1f3wy1r">
+        <di:waypoint x="200" y="278" />
+        <di:waypoint x="200" y="382" />
+      </bpmndi:BPMNEdge>
+      
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

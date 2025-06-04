@@ -19,6 +19,7 @@
     <properties>
         <spring.maven.artifact.version>5.3.27</spring.maven.artifact.version>
         <org.egovframe.rte.version>4.2.0</org.egovframe.rte.version>
+        <camunda.version>7.20.0</camunda.version>
     </properties>
 
     <repositories>
@@ -619,6 +620,76 @@
 		    <artifactId>javax.faces-api</artifactId>
 		    <version>2.3</version>
 		</dependency>
+		
+		<!-- Camunda BPM dependencies -->	    
+		<dependency>
+		  <groupId>org.camunda.bpm</groupId>
+		  <artifactId>camunda-engine</artifactId>
+		  <version>7.20.0</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.camunda.bpm</groupId>
+		    <artifactId>camunda-engine-spring</artifactId>
+		    <version>7.20.0</version>
+		</dependency>
+		
+		<!-- Camunda BPMN Model API -->
+        <dependency>
+            <groupId>org.camunda.bpm.model</groupId>
+            <artifactId>camunda-bpmn-model</artifactId>
+            <version>7.20.0</version>
+        </dependency>
+
+        <!-- Camunda Spin 플러그인 -->
+        <dependency>
+            <groupId>org.camunda.spin</groupId>
+            <artifactId>camunda-spin-dataformat-all</artifactId>
+            <version>1.20.0</version> <!-- Spin은 Camunda와 따로 버전 관리됨 -->
+        </dependency>
+        
+        <!-- Camunda Spin 엔진 플러그인 -->
+        <dependency>
+            <groupId>org.camunda.bpm</groupId>
+            <artifactId>camunda-engine-plugin-spin</artifactId>
+            <version>7.20.0</version>
+        </dependency>
+						
+		
+		<!-- 공통 유틸 -->
+		<dependency>
+		  <groupId>org.camunda.commons</groupId>
+		  <artifactId>camunda-commons-typed-values</artifactId>
+		  <version>7.20.0</version>
+		</dependency>
+		
+		<!-- Log4j2 의존성 추가 -->
+		<dependency>
+  			<groupId>org.apache.logging.log4j</groupId>
+  			<artifactId>log4j-api</artifactId>
+  			<version>2.20.0</version>
+		</dependency>
+		<dependency>
+  			<groupId>org.apache.logging.log4j</groupId>
+  			<artifactId>log4j-core</artifactId>
+  			<version>2.20.0</version>
+		</dependency>
+		<dependency>
+  			<groupId>org.apache.logging.log4j</groupId>
+  			<artifactId>log4j-slf4j-impl</artifactId>
+  			<version>2.20.0</version>
+		</dependency>
+
+		
+		<!--
+		<dependency>
+		  <groupId>org.camunda.bpm.springboot</groupId>
+		  <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
+		  <version>7.20.0</version>
+		</dependency>
+		-->
+		 	    		
+	    <!-- 추가적인 Camunda 의존성 필요 시 여기에 추가 -->	    	   
 
     </dependencies>
 
@@ -744,7 +815,6 @@
                 <version>3.5.0</version>
             </plugin>
         </plugins>
-<<<<<<< HEAD
         <resources>
         	<resource>
 	            <directory>src/main/resources</directory>
@@ -754,8 +824,6 @@
 	            </includes>
 	        </resource>
 	    </resources>
-=======
->>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
     </build>
 
     <reporting>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camunda="http://www.camunda.org/schema/1.0/camunda"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.camunda.org/schema/1.0/camunda
+           http://www.camunda.org/schema/1.0/camunda/Camunda.xsd">
+
+    <!-- Camunda Process Engine Configuration -->
+    <bean id="processEngineConfiguration"
+          class="org.camunda.bpm.engine.spring.SpringProcessEngineConfiguration">
+        <property name="dataSource" ref="egov.dataSource" />
+        <property name="transactionManager" ref="txManager" />
+        <property name="databaseSchemaUpdate" value="false" />
+        <property name="jobExecutorActivate" value="true" />
+        <property name="cmmnEnabled" value="false" />
+        <property name="dmnEnabled" value="false" />
+        <property name="deploymentResources"
+                  value="classpath*:/process/*.bpmn" />
+    </bean>
+
+    <!-- Process Engine -->
+    <bean id="processEngine" factory-bean="processEngineConfiguration" factory-method="buildProcessEngine" />
+
+</beans>

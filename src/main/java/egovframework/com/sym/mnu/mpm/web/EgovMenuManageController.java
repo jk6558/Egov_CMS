@@ -120,11 +120,7 @@ public class EgovMenuManageController {
      * @return 출력페이지정보 "sym/mnu/mpm/EgovMenuManage"
      * @exception Exception
      */
-<<<<<<< HEAD
     //@IncludedInfo(name = "메뉴관리리스트", order = 1091, gid = 60)
-=======
-    @IncludedInfo(name = "메뉴관리리스트", order = 1091, gid = 60)
->>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
     @RequestMapping(value = "/sym/mnu/mpm/EgovMenuManageSelect.do")
     public String selectMenuManageList(@ModelAttribute("searchVO") ComDefaultVO searchVO, ModelMap model)
             throws Exception {
@@ -330,11 +326,7 @@ public class EgovMenuManageController {
 	 * @return 출력페이지정보 "sym/mnu/mpm/EgovMenuList"
 	 * @exception Exception
 	 */
-<<<<<<< HEAD
 	//@IncludedInfo(name = "메뉴리스트관리", order = 1090, gid = 60)
-=======
-	@IncludedInfo(name = "메뉴리스트관리", order = 1090, gid = 60)
->>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
 	@RequestMapping(value = "/sym/mnu/mpm/EgovMenuListSelect.do")
 	public String selectMenuList(
 		@ModelAttribute("searchVO") ComDefaultVO searchVO,

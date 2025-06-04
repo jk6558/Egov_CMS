@@ -17,6 +17,7 @@ import egovframework.com.cmm.ComDefaultVO;
 import egovframework.com.cmm.EgovMessageSource;
 import egovframework.com.cmm.LoginVO;
 import egovframework.com.cmm.annotation.IncludedInfo;
+import egovframework.com.cmm.service.EgovProperties;
 import egovframework.com.cmm.util.EgovUserDetailsHelper;
 import egovframework.com.sym.mnu.mcm.service.EgovMenuCreateManageService;
 import egovframework.com.sym.mnu.mcm.service.MenuCreatVO;
@@ -42,14 +43,10 @@ import egovframework.com.sym.mnu.stm.service.EgovSiteMapngService;
  */
 
 @Controller
-<<<<<<< HEAD
-public class EgovSiteMapngController {	
-=======
 public class EgovSiteMapngController {
->>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
-
+	
 	private static final Logger LOGGER = LoggerFactory.getLogger(EgovSiteMapngController.class);
-
+	
 	/** EgovPropertyService */
     @Resource(name = "propertiesService")
     protected EgovPropertyService propertiesService;
@@ -79,16 +76,13 @@ public class EgovSiteMapngController {
     		@ModelAttribute("searchVO") ComDefaultVO searchVO,
     		ModelMap model)
             throws Exception {
+    	/*
     	LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
+    	
     	searchVO.setSearchKeyword(user.getId());
     	// AuthorCode 검색
-<<<<<<< HEAD
-    	MenuCreatVO menuVO = menuCreateManageService.selectAuthorByUsr(searchVO);
-=======
 		MenuCreatVO menuVO = menuCreateManageService.selectAuthorByUsr(searchVO);
->>>>>>> 20ee72a1a2e5b3ce77bb4f3ad6e29e09616620b4
-
-    	MenuSiteMapVO menuSiteMapVO = new MenuSiteMapVO();
+		MenuSiteMapVO menuSiteMapVO = new MenuSiteMapVO();
     	menuSiteMapVO.setAuthorCode(menuVO.getAuthorCode());
     	List<EgovMap> resultList = menuCreateManageService.selectMenuCreatSiteMapList(menuSiteMapVO);
 
@@ -97,5 +91,26 @@ public class EgovSiteMapngController {
         model.addAttribute("authorCode", menuVO.getAuthorCode());
 
         return "egovframework/com/sym/mnu/stm/EgovSiteMapng";
+		*/
+	    
+	    String tmp_authorCode = "";
+
+		if ("dummy".equals(EgovProperties.getProperty("Globals.Auth"))) {
+    		tmp_authorCode = "ROLE_ADMIN";
+		} else {
+			LoginVO user = (LoginVO) EgovUserDetailsHelper.getAuthenticatedUser();
+			searchVO.setSearchKeyword(user.getId());
+			MenuCreatVO menuVO = menuCreateManageService.selectAuthorByUsr(searchVO);
+			tmp_authorCode = menuVO.getAuthorCode();
+		}
+
+		MenuSiteMapVO menuSiteMapVO = new MenuSiteMapVO();
+		menuSiteMapVO.setAuthorCode(tmp_authorCode);
+		List<EgovMap> resultList = menuCreateManageService.selectMenuCreatSiteMapList(menuSiteMapVO);
+
+		model.addAttribute("resultList", resultList);
+		model.addAttribute("authorCode", tmp_authorCode);
+		return "egovframework/com/sym/mnu/stm/EgovSiteMapng";
+
     }
 }
